@@ -15,11 +15,11 @@ return {
 			local lspkind = require("lspkind")
 			cmp.setup({
 				formatting = {
-					format = function(entry, vim_item)
-						-- fancy icons and a name of kind
-						vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
-						-- set a name for each source
-						vim_item.menu = ({
+					format = lspkind.cmp_format({
+						mode = "symbol_text",
+						maxwidth = 50,
+						ellipsis_char = "...",
+						menu = {
 							buffer = "[Buffer]",
 							nvim_lsp = "[LSP]",
 							nvim_lua = "[Lua]",
@@ -28,9 +28,8 @@ return {
 							spell = "[Spell]",
 							calc = "[Calc]",
 							emoji = "[Emoji]",
-						})[entry.source.name]
-						return vim_item
-					end,
+						},
+					}),
 				},
 				mapping = {
 					["<C-p>"] = cmp.mapping.select_prev_item(),
