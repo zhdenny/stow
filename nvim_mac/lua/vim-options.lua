@@ -15,6 +15,7 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
 vim.keymap.set("n", "<leader>h", "<cmd>bp<CR>", { desc = "Buffer Previous" })
 vim.keymap.set("n", "<leader>l", "<cmd>bn<CR>", { desc = "Buffer Next" })
+vim.keymap.set("n", "<leader>S", ":windo set scrollbind!<CR>", { desc = "Toggle Scroll Lock" })
 
 -- Adjust window sizes
 vim.keymap.set("n", "<leader><Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
