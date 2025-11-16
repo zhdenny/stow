@@ -160,23 +160,23 @@ return {
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+          map("gd", function() Snacks.picker.lsp_definitions() end, "[G]oto [D]efinition")
 
           -- Find references for the word under your cursor.
-          map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+          map("gr", function() Snacks.picker.lsp_references() end, "[G]oto [R]eferences")
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+          map("gI", function() Snacks.picker.lsp_implementations() end, "[G]oto [I]mplementation")
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
-          map("<leader>LD", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
+          map("<leader>LD", function() Snacks.picker.lsp_type_definitions() end, "Type [D]efinition")
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map("<leader>Ls", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+          map("<leader>Ls", function() Snacks.picker.lsp_symbols() end, "[D]ocument [S]ymbols")
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
@@ -199,7 +199,7 @@ return {
             vim.lsp.buf.format({ async = true })
           end, "[F]ormat")
 
-          map("<leader>Lw", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+          map("<leader>Lw", function() Snacks.picker.lsp_workspace_symbols() end, "[W]orkspace [S]ymbols")
 
           -- Toggle diagnostics (buffer-specific for 0.11.2)
           map("<leader>Ld", function()

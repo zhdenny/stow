@@ -19,6 +19,8 @@ return {
             max_length = vim.o.columns * 2 / 3,
             filetype_names = {
               TelescopePrompt = 'Telescope',
+              snacks_picker = 'Picker',
+              snacks_input = 'Input',
               dashboard = 'Dashboard',
               packer = 'Packer',
               fzf = 'FZF',
