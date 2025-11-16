@@ -21,6 +21,7 @@ return {
               TelescopePrompt = 'Telescope',
               snacks_picker = 'Picker',
               snacks_input = 'Input',
+              snacks_dashboard = 'Dashboard',
               dashboard = 'Dashboard',
               packer = 'Packer',
               fzf = 'FZF',

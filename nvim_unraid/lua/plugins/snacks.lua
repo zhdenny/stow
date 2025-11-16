@@ -8,6 +8,37 @@ return {
 		quickfile = { enabled = true },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
+		dashboard = {
+			enabled = true,
+			preset = {
+				header = [[
+    ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+    ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+    ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+    ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+    ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+    ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+				-- stylua: ignore
+				---@type snacks.dashboard.Item[]
+				keys = {
+					{ icon = " ", key = "h", desc = "HOME - Picker", action = function() vim.cmd("cd /root_unraid/") Snacks.picker.files() end },
+					{ icon = " ", key = "d", desc = "Docker compose dir - Picker", action = function() vim.cmd("cd /boot/config/plugins/compose.manager/") Snacks.picker.grep() end },
+					{ icon = " ", key = "u", desc = "Userscripts - Picker", action = function() vim.cmd("cd /boot/config/plugins/user.scripts/scripts/") Snacks.picker.files() end },
+					{ icon = " ", key = "a", desc = "APPDATA - Picker", action = function() vim.cmd("cd /mnt/cache/appdata/") Snacks.picker.files() end },
+					{ icon = "󰱼 ", key = "g", desc = "GREP DIR", action = function() Snacks.picker.grep() end },
+					{ icon = " ", key = "r", desc = "Recent", action = function() Snacks.picker.recent() end },
+					{ icon = "󱌣 ", key = "m", desc = "Mason", action = ":Mason" },
+					{ icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
+					{ icon = "󰂖 ", key = "U", desc = "Update plugins", action = function() require("lazy").sync() end },
+					{ icon = " ", key = "q", desc = "Quit NVIM", action = ":qa" },
+				},
+			},
+			sections = {
+				{ section = "header" },
+				{ section = "keys", gap = 1, padding = 1 },
+				{ section = "startup" },
+			},
+		},
 		picker = {
 			enabled = true,
 			-- Use telescope preset for horizontal layout
