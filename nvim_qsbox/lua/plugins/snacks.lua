@@ -8,6 +8,35 @@ return {
 		quickfile = { enabled = true },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
+		dashboard = {
+			enabled = true,
+			preset = {
+				header = [[
+    ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+    ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+    ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+    ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+    ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+    ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+				-- stylua: ignore
+				---@type snacks.dashboard.Item[]
+				keys = {
+					{ icon = "", key = "h", desc = "HOME - Picker", action = function() vim.cmd("cd $HOME") Snacks.picker.files() end },
+					{ icon = "", key = "o", desc = "OPT - Picker", action = function() vim.cmd("cd /opt/") Snacks.picker.files() end },
+					{ icon = "󰱼 ", key = "g", desc = "GREP DIR", action = function() Snacks.picker.grep() end },
+					{ icon = " ", key = "r", desc = "Recent", action = function() Snacks.picker.recent() end },
+					{ icon = "󱌣 ", key = "m", desc = "Mason", action = ":Mason" },
+					{ icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
+					{ icon = "󰂖 ", key = "u", desc = "Update plugins", action = function() require("lazy").sync() end },
+					{ icon = " ", key = "q", desc = "Quit NVIM", action = ":qa" },
+				},
+			},
+			sections = {
+				{ section = "header" },
+				{ section = "keys", gap = 1, padding = 1 },
+				{ section = "startup" },
+			},
+		},
 		picker = {
 			enabled = true,
 			-- Use telescope preset for horizontal layout

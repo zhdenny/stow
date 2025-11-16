@@ -21,10 +21,10 @@ return {
 				-- stylua: ignore
 				---@type snacks.dashboard.Item[]
 				keys = {
-					{ icon = " ", key = "h", desc = "HOME - Picker", action = function() vim.cmd("cd /root_unraid/") Snacks.picker.files() end },
-					{ icon = " ", key = "d", desc = "Docker compose dir - Picker", action = function() vim.cmd("cd /boot/config/plugins/compose.manager/") Snacks.picker.grep() end },
-					{ icon = " ", key = "u", desc = "Userscripts - Picker", action = function() vim.cmd("cd /boot/config/plugins/user.scripts/scripts/") Snacks.picker.files() end },
-					{ icon = " ", key = "a", desc = "APPDATA - Picker", action = function() vim.cmd("cd /mnt/cache/appdata/") Snacks.picker.files() end },
+					{ icon = "", key = "h", desc = "HOME - Picker", action = function() vim.cmd("cd /root_unraid/") Snacks.picker.files() end },
+					{ icon = "", key = "d", desc = "Docker compose dir - Picker", action = function() vim.cmd("cd /boot/config/plugins/compose.manager/") Snacks.picker.grep() end },
+					{ icon = "󰯁", key = "u", desc = "Userscripts - Picker", action = function() vim.cmd("cd /boot/config/plugins/user.scripts/scripts/") Snacks.picker.files() end },
+					{ icon = "", key = "a", desc = "APPDATA - Picker", action = function() vim.cmd("cd /mnt/cache/appdata/") Snacks.picker.files() end },
 					{ icon = "󰱼 ", key = "g", desc = "GREP DIR", action = function() Snacks.picker.grep() end },
 					{ icon = " ", key = "r", desc = "Recent", action = function() Snacks.picker.recent() end },
 					{ icon = "󱌣 ", key = "m", desc = "Mason", action = ":Mason" },
