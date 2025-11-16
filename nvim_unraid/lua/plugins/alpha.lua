@@ -46,7 +46,7 @@ return {
 			dashboard.button(
 				"a",
 				"   appdata dir - Telescope",
-				":cd /mnt/user/appdata/ | lua Snacks.picker.files()<CR>"
+				":cd /mnt/cache/appdata/ | lua Snacks.picker.files()<CR>"
 			),
 			dashboard.button("h", "   home dir - Telescope", ":cd /root_unraid/ | lua Snacks.picker.files()<CR>"),
 			dashboard.button("g", "󰱼   GREP DIR", ":lua Snacks.picker.grep()<CR>"),
