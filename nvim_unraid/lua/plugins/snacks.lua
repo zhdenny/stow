@@ -232,6 +232,9 @@ return {
 	config = function(_, opts)
 		require("snacks").setup(opts)
 
+		-- Set vim.ui.select to use Snacks.picker.select
+		vim.ui.select = Snacks.picker.select
+
 		-- Optional: Create a custom colorscheme picker using snacks
 		-- This provides similar functionality to telescope's colorscheme picker
 		vim.api.nvim_create_user_command("SnacksColorscheme", function()
