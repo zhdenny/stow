@@ -25,8 +25,6 @@ return {
 					"jsonls",
 					"pyright",
 					"yamlls",
-					"ruff",
-					"matlab_ls",
 				},
 				automatic_installation = true,
 			})
