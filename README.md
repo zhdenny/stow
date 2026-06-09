@@ -3,7 +3,7 @@ This project is a GNU stow directory which contains neovim configurations for th
 1. Edits to files within nvim_mac directory and nvim_shared directory impact the mac system. The appropriate stow command must be issued from the mac system for those edits to take effect on the mac system nvim configuration. This is the stow command:
 
 ```
-stow --dir=/Users/zach/.config/stow --target=/users/zach/.config/nvim --restow nvim_shared nvim_mac
+stow --dir=/Users/zach/stow --target=/users/zach/.config/nvim --restow nvim_shared nvim_mac
 ```
 
 2. Edits to files within nvim_qsbox directory and nvim_shared directory impact the qsbox system. The appropriate stow command must be issued from the qsbox system for those edits to take effect on the qsbox system nvim configuration. This is the stow command but this stow command must ONLY be issued by the user manually from the qsbox system. This is something the user must be notified of when necessary.
