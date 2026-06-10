@@ -9,8 +9,9 @@
 
 | Rule | Detail |
 |------|--------|
-| Global Diagnostic Toggle | Diagnostic toggle hotkey `<leader>Ld` must be registered globally at startup in `vim-options.lua` instead of buffer-locally inside LSP attachments. |
+| Global Diagnostic Toggle | Diagnostic toggle hotkey `<leader>Ld` must be registered globally at startup in `vim-options-shared.lua` instead of buffer-locally inside LSP attachments. |
 | Markdown Diagnostics | Diagnostics must not be generated or shown for Markdown files. |
+| Native Diagnostic Signs | Diagnostic signs must be configured natively via `vim.diagnostic.config` instead of the legacy `vim.fn.sign_define` API. |
 
 ---
 

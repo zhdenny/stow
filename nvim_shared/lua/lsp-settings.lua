@@ -2,19 +2,6 @@
 -- Ensure sign column is always visible to show diagnostic icons
 vim.opt.signcolumn = "yes"
 
--- Define diagnostic signs for compatibility
-local signs = {
-  { name = "DiagnosticSignError", text = "" },
-  { name = "DiagnosticSignWarn", text = "" },
-  { name = "DiagnosticSignHint", text = "💡" },
-  { name = "DiagnosticSignInfo", text = "" }
-}
-
--- Set the signs for compatibility
-for _, sign in ipairs(signs) do
-  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-end
-
 -- Enhanced diagnostic configuration
 vim.diagnostic.config({
   signs = {
