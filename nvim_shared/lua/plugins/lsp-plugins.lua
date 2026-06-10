@@ -145,7 +145,6 @@ return {
 				javascriptreact = { "eslint_d" },
 				json = { "jsonlint" },
 				lua = { "luacheck" },
-				markdown = { "markdownlint" },
 				python = { "ruff" },
 				sh = { "shellcheck" },
 				typescript = { "eslint_d" },

@@ -213,12 +213,6 @@ return {
 						Snacks.picker.lsp_workspace_symbols()
 					end, "[W]orkspace [S]ymbols")
 
-					-- Toggle diagnostics (buffer-specific for 0.11.2)
-					map("<leader>Ld", function()
-						local current_buf = vim.api.nvim_get_current_buf()
-						local is_enabled = vim.diagnostic.is_enabled({ bufnr = current_buf })
-						vim.diagnostic.enable(not is_enabled, { bufnr = current_buf })
-					end, "[T]oggle [D]iagnostics")
 
 					-- Add useful buffer commands
 					vim.api.nvim_buf_create_user_command(event.buf, "LspRestart", function()
