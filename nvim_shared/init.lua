@@ -1,3 +1,18 @@
+-- Override deprecated vim.validate table signature to suppress warnings from plugins
+local original_validate = vim.validate
+vim.validate = function(...)
+	local args = { ... }
+	if #args == 1 and type(args[1]) == "table" then
+		for name, spec in pairs(args[1]) do
+			if type(spec) == "table" then
+				original_validate(name, spec[1], spec[2], spec[3])
+			end
+		end
+	else
+		original_validate(...)
+	end
+end
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
