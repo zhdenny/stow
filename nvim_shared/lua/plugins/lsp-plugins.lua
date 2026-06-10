@@ -158,7 +158,6 @@ return {
 					"yamllint",
 					"shellcheck",
 					"luacheck",
-					"markdownlint",
 					"jsonlint",
 				},
 				automatic_installation = true,

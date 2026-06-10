@@ -17,6 +17,7 @@
 | `REF_template.md` | Blank template for creating new doc files | Rules, implementation content | Creating a new doc file |
 | `REFACTOR_TODO.md` | Current refactor work plan and targets | Canonical rules | Refactor planning |
 | `LOGIC_clipboard.md` | Platform-specific clipboard/OSC 52 synchronization | System-level architecture details | Technical work |
+| `LOGIC_diagnostics.md` | Platform-specific and filetype-specific diagnostic configurations | Low-level plugin code | Formatting, linting, or diagnostics work |
 
 ### Task → Load mapping
 

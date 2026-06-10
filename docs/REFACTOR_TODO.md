@@ -13,8 +13,8 @@
 
 Objective: Align shared options and investigate duplicate mappings across mac, qsbox, and unraid configurations.
 
-- [ ] **1. Align duplicate keymaps**
-  - [ ] Consolidate identical diagnostic and info mappings to `nvim_shared/lua/vim-options.lua`.
+- [x] **1. Align duplicate keymaps**
+  - [x] Consolidate identical diagnostic and info mappings to `nvim_shared/lua/vim-options-shared.lua`. (Done)
 
 ---
 

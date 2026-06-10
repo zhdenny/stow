@@ -39,7 +39,6 @@ return {
 					"yamllint",
 					"shellcheck",
 					"luacheck",
-					"markdownlint",
 					"jsonlint",
 					-- Formatters
 					"stylua",
