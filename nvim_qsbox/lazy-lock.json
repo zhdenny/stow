@@ -34,6 +34,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
   "schemastore.nvim": { "branch": "main", "commit": "0f3cd0e584b4ed221fc44eee5b0b6ce335f7e263" },
+  "smart-paste.nvim": { "branch": "main", "commit": "7a461d3d83a6bee199d3f1c0b177f7f3e22fa371" },
   "snacks.nvim": { "branch": "main", "commit": "882c996cf28183f4d63640de0b4c02ec886d01f2" },
   "tint.nvim": { "branch": "master", "commit": "586e87f00c8b0f5e857cefe10839e41f3e8c6d01" },
   "tiny-devicons-auto-colors.nvim": { "branch": "main", "commit": "3b0c0174f4ed9120b6bea00d77e179ed5c46dcfb" },
