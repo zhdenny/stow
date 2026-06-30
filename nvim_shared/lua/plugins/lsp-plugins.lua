@@ -105,6 +105,11 @@ return {
 			)
 			conform.setup({
 				formatters_by_ft = config,
+				formatters = {
+					prettier = {
+						prepend_args = { "--print-width", "80", "--prose-wrap", "always" },
+					},
+				},
 				format_on_save = {
 					lsp_fallback = true,
 					async = false,
