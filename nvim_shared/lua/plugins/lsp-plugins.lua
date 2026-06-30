@@ -86,6 +86,7 @@ return {
 				python = { "ruff_format", "black" },
 				lua = { "stylua" },
 				shell = { "shfmt" },
+				yaml = { "yamlfmt" },
 			}
 
 			config = vim.tbl_extend(
@@ -100,7 +101,6 @@ return {
 					"toml",
 					"typescript",
 					"typescriptreact",
-					"yaml",
 				}, "prettier")
 			)
 			conform.setup({
@@ -108,6 +108,9 @@ return {
 				formatters = {
 					prettier = {
 						prepend_args = { "--print-width", "80", "--prose-wrap", "always" },
+					},
+					yamlfmt = {
+						prepend_args = { "-formatter", "max_line_length=80" },
 					},
 				},
 				format_on_save = {

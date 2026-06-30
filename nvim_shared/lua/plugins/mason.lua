@@ -45,6 +45,7 @@ return {
 					"prettier",
 					"black",
 					"shfmt",
+					"yamlfmt",
 				},
 				auto_update = false,
 				run_on_start = false,
