@@ -113,6 +113,14 @@ return {
 				log_level = vim.log.levels.ERROR,
 				notify_on_error = true,
 			})
+			-- Global format hotkey (works without LSP)
+			vim.keymap.set({ "n", "v" }, "<leader>cf", function()
+				conform.format({
+					lsp_fallback = true,
+					async = false,
+					timeout_ms = 1000,
+				})
+			end, { desc = "[F]ormat buffer (conform)" })
 		end,
 	},
 

@@ -206,8 +206,8 @@ return {
 
 					-- Additional enhanced keymaps
 					map("<leader>Lf", function()
-						vim.lsp.buf.format({ async = true })
-					end, "[F]ormat")
+						require("conform").format({ lsp_fallback = true, async = true, timeout_ms = 1000 })
+					end, "[F]ormat (conform)")
 
 					map("<leader>Lw", function()
 						Snacks.picker.lsp_workspace_symbols()
