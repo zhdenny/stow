@@ -154,6 +154,14 @@ return {
 				"--ranges",
 				"-",
 			}
+			-- Configure yamllint to allow longer lines
+			lint.linters.yamllint.args = {
+				"-d",
+				"{extends: relaxed, rules: {line-length: {max: 120}}}",
+				"-f",
+				"parsable",
+				"-",
+			}
 
 			lint.linters_by_ft = {
 				go = { "golangcilint" },
