@@ -83,7 +83,7 @@ return {
 
 			local config = {
 				go = { "gofmt" },
-				python = { { "ruff_format", "black" } },
+				python = { "ruff_format", "black" },
 				lua = { "stylua" },
 				shell = { "shfmt" },
 			}
