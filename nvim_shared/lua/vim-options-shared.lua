@@ -23,7 +23,7 @@ vim.keymap.set("n", "<leader><Down>", "<cmd>resize -2<cr>", { desc = "Decrease W
 vim.keymap.set("n", "<leader><Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 vim.keymap.set("n", "<leader><Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 
-vim.opt.textwidth = 100
+vim.opt.textwidth = 90
 
 vim.opt.termguicolors = true
 vim.g.have_nerd_font = true
