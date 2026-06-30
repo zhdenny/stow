@@ -75,3 +75,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		end
 	end,
 })
+
+-- YAML comment wrapping
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "yaml",
+	callback = function()
+		vim.opt_local.textwidth = 80
+		vim.opt_local.formatoptions:append("c") -- wrap comments
+		vim.opt_local.formatoptions:append("q") -- allow gq to format comments
+		vim.keymap.set("n", "<leader>cw", "gqap", { buffer = true, desc = "[W]rap comment paragraph" })
+	end,
+})
