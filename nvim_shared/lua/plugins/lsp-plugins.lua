@@ -107,10 +107,10 @@ return {
 				formatters_by_ft = config,
 				formatters = {
 					prettier = {
-						prepend_args = { "--print-width", "80", "--prose-wrap", "always" },
+						prepend_args = { "--print-width", "40", "--prose-wrap", "always" },
 					},
 					yamlfmt = {
-						prepend_args = { "-formatter", "max_line_length=80" },
+						prepend_args = { "-formatter", "max_line_length=40" },
 					},
 				},
 				format_on_save = {
