@@ -1,13 +1,32 @@
--- Sync clipboard between OS and Neovim via OSC 52.
+local osc52 = require("vim.ui.clipboard.osc52")
+
+local function copy_with_fallback(reg)
+	local orig_copy = osc52.copy(reg)
+	return function(lines, regtype)
+		-- 1. Store internally in Neovim's default unnamed register
+		vim.fn.setreg('"', lines, regtype)
+		-- 2. Emit OSC 52 escape sequences to update macOS clipboard
+		orig_copy(lines, regtype)
+	end
+end
+
+local function paste_from_internal()
+	return {
+		vim.fn.split(vim.fn.getreg('"'), "\n"),
+		vim.fn.getregtype('"'),
+	}
+end
+
 vim.g.clipboard = {
-	name = "OSC 52",
+	name = "OSC 52 (Write) + Internal (Read)",
 	copy = {
-		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+		["+"] = copy_with_fallback("+"),
+		["*"] = copy_with_fallback("*"),
 	},
 	paste = {
-		["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-		["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+		["+"] = paste_from_internal,
+		["*"] = paste_from_internal,
 	},
 }
-vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
+
+vim.opt.clipboard = "unnamedplus"
